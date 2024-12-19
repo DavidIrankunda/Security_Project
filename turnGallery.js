@@ -1,5 +1,6 @@
 /* turn.js 4.1.0 | Copyright (c) 2012 Emmanuel Garcia | turnjs.com | turnjs.com/license.txt */
 
+
 // This is not related to this 
 
 function initializeFlipbook(selector, width, height) {
@@ -11,6 +12,7 @@ function initializeFlipbook(selector, width, height) {
 }
 
 //continue
+
 
 (function (f) {
   function I(a, b, c) {
