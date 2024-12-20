@@ -866,6 +866,74 @@
                                            <b> 60% Increase in Sales:</b> Enhanced user experience drove higher conversion rates. <br>
                                             <b>40% Boost in Repeat Customers: </b>Improved customer loyalty through personalized features. <br>
                                             <b>30% Higher Conversion Rates:</b> Optimized checkout process minimized cart abandonment. <br><br><br>
+
+                                            <b>Slide The Gallery</b> <br>
+                                            
+                                            <section>
+                                                <div id="scroll">
+                                                    <!-- Multiple Images to display -->
+                                                    <img
+                                                      src="img/city-1.jpg"
+                                                      onclick="onClick(this)"
+                                                      class="w3-hover-opacity"
+                                                      alt="NYC Photos"
+                                                    />
+                                                    <img
+                                                      src="img/city-2.jpg"
+                                                      onclick="onClick(this)"
+                                                      class="w3-hover-opacity"
+                                                      alt="NYC Photos"
+                                                    />
+                                                    <img
+                                                      src="img/city-3.jpg"
+                                                      onclick="onClick(this)"
+                                                      class="w3-hover-opacity"
+                                                      alt="NYC Photos"
+                                                    />
+                                                    <img
+                                                      src="img/city-4.jpg"
+                                                      onclick="onClick(this)"
+                                                      class="w3-hover-opacity"
+                                                      alt="NYC Photos"
+                                                    />
+                                                    <img
+                                                      src="img/city-5.jpg"
+                                                      onclick="onClick(this)"
+                                                      class="w3-hover-opacity"
+                                                      alt="NYC Photos"
+                                                    />
+                                                    <img
+                                                      src="img/liberty-statue.jpg"
+                                                      onclick="onClick(this)"
+                                                      class="w3-hover-opacity"
+                                                      alt="NYC Photos"
+                                                    />
+                                                    <img
+                                                      src="img/bridge-brooklyn.jpg"
+                                                      onclick="onClick(this)"
+                                                      class="w3-hover-opacity"
+                                                      alt="NYC Photos"
+                                                    />
+                                                    <img
+                                                      src="img/city-1.jpg"
+                                                      onclick="onClick(this)"
+                                                      class="w3-hover-opacity"
+                                                      alt="NYC Photos"
+                                                    />
+                                                    <img
+                                                      src="img/city-2.jpg"
+                                                      onclick="onClick(this)"
+                                                      class="w3-hover-opacity"
+                                                      alt="NYC Photos"
+                                                    />
+                                                    <img
+                                                      src="img/city-3.jpg"
+                                                      onclick="onClick(this)"
+                                                      class="w3-hover-opacity"
+                                                      alt="NYC Photos"
+                                                    />
+                                                  </div>
+                                            </section>
                                             <b>Be Our Next Client!</b> <br>
                                             Ready to boost your online sales? Reach out on <a href="https://api.whatsapp.com/send/?phone=250737481512&text=Hello+,can+we+know+more+about+you?&type=phone_number&app_absent=0">WhatsApp </a>or <a href="tel: +250780854895"> schedule a call </a> 
                                             to discuss how we can enhance your e-commerce store's performance and customer satisfaction.</p>
@@ -1300,11 +1368,14 @@
 <<<<<<< HEAD
 =======
      <script>
-        // Modal Image Gallery
+        // Function to display image in modal
         function onClick(element) {
-          document.getElementById("img01").src = element.src;
-          document.getElementById("modal01").style.display = "block";
+          var modal = document.getElementById("modal01");
+          var img = document.getElementById("img01");
           var captionText = document.getElementById("caption");
+  
+          img.src = element.src;
+          modal.style.display = "block";
           captionText.innerHTML = element.alt;
         }
   
@@ -1312,6 +1383,7 @@
         window.onscroll = function() {
           myFunction();
         };
+  
         function myFunction() {
           var navbar = document.getElementById("myNavbar");
           if (
