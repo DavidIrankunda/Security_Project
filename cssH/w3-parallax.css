@@ -1,10 +1,10 @@
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+/* body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
   height: 100%;
   color: rgb(53, 52, 52);
   line-height: 1.8;
   background-color: #d6d2d2 !important;
-}
+} */
 
 /* Create a Parallax Effect */
 .bgimg-1, .bgimg-2, .bgimg-3 {
@@ -64,11 +64,11 @@ background-color: rgba(7, 7, 19, 0.658) !important;
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(0, 102, 255); 
+  background: #669264; 
   border-radius: 12px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #000cb3; 
+  background: #669264; 
 }
