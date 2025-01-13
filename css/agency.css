@@ -159,90 +159,254 @@
 }
 
 
-/* Styling for portfolio modal 15 */
-#portfolioModal15 {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5; /* Light background */
-    color: #333; /* Dark text for readability */
+/* General styling for all portfolio modals */
+[id^="portfolioModal"] {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff; /* Clean white background */
+    color: #444;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+    transform-origin: center;
 }
 
-#portfolioModal15 h2 {
-    color: #28a745; /* Green heading */
-    font-weight: bold;
+/* Fade-in animation for the modal */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Headings and text styles */
+[id^="portfolioModal"] h2 {
+    color: #669264; /* Updated color for heading */
+    font-weight: 700;
     text-align: center;
     margin-bottom: 20px;
+    text-transform: uppercase;
+    animation: slideInDown 0.8s ease-out;
 }
 
-#portfolioModal15 .item-intro {
-    color: #6c757d; /* Muted text color */
+/* Sliding animation for headings */
+@keyframes slideInDown {
+    0% { opacity: 0; transform: translateY(-30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+[id^="portfolioModal"] .item-intro {
+    color: #636e72; /* Muted grey for intro text */
     font-style: italic;
     text-align: center;
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: fadeIn 1.2s ease-in-out forwards;
 }
 
-#portfolioModal15 img.img-responsive {
-    border: 2px solid #28a745; /* Green border around images */
-    border-radius: 8px;
+/* Image styling with zoom effects */
+[id^="portfolioModal"] img.img-responsive {
+    border: 3px solid #669264; /* Updated border color */
+    border-radius: 10px;
     margin: 15px auto;
     display: block;
+    max-width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: zoomIn 1s ease-in-out;
 }
 
-#portfolioModal15 ul {
+/* Zoom-in effect on hover */
+[id^="portfolioModal"] img.img-responsive:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Keyframe animation for image zoom */
+@keyframes zoomIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Styling for list items */
+[id^="portfolioModal"] ul {
     list-style: none;
     padding: 0;
+    margin: 0 0 15px;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
 }
 
-#portfolioModal15 ul li {
-    color: #28a745; /* Green bullet items */
+[id^="portfolioModal"] ul li {
+    color: #669264; /* Updated list item color */
     font-weight: bold;
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
 
-#portfolioModal15 ul.list-inline {
-    text-align: left;
-    color: #555;
-    font-weight: normal;
+/* Fade-up animation */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
-#portfolioModal15 section img {
-    border: 2px solid #ddd;
-    border-radius: 4px;
-    margin: 5px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#portfolioModal15 section img:hover {
-    transform: scale(1.05); /* Slight zoom effect */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-#portfolioModal15 .btn-primary {
-    background-color: #28a745; /* Green button */
+/* Button styles with hover effects */
+[id^="portfolioModal"] .btn-primary {
+    background: linear-gradient(45deg, #7EA575, #669264); /* Gradient using updated color */
     border: none;
     color: #fff;
     font-weight: bold;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease;
-}
-
-#portfolioModal15 .btn-primary:hover {
-    background-color: #218838; /* Darker green on hover */
-}
-
-#portfolioModal15 .close-modal {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #28a745;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    padding: 12px 25px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    display: block;
+    width: 150px;
     text-align: center;
-    line-height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: bounceIn 1s ease-out;
+}
+
+/* Bounce-in animation */
+@keyframes bounceIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    60% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+[id^="portfolioModal"] .btn-primary:hover {
+    background: linear-gradient(45deg, #669264, #7EA575); /* Reverse gradient */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+}
+
+/* Close button styling */
+[id^="portfolioModal"] .close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #669264; /* Updated close button color */
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
     color: #fff;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-#portfolioModal15 .close-modal:hover {
-    background-color: #218838;
+[id^="portfolioModal"] .close-modal:hover {
+    background-color: #587655; /* Slightly darker hover color */
+    transform: rotate(90deg);
+}
+
+/* Gallery images with light hover animations */
+[id^="portfolioModal"] section img {
+    border: 2px solid #669264; /* Updated border color */
+    border-radius: 6px;
+    margin: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+[id^="portfolioModal"] section img:hover {
+    transform: scale(1.08) rotate(2deg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* General styling for portfolio items */
+.portfolio-item {
+    position: relative;
+    margin-bottom: 30px;
+    overflow: hidden;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+/* Hover effect for scaling and shadow */
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for the hover overlay */
+.portfolio-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(102, 146, 100, 0.85); /* Semi-transparent green overlay */
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+    border-radius: 12px;
+}
+
+/* Make hover content visible on hover */
+.portfolio-item:hover .portfolio-hover {
+    opacity: 1;
+}
+
+/* Icon inside the hover overlay */
+.portfolio-hover-content i {
+    color: #10dc43;
+    font-size: 3rem;
+    transition: transform 0.3s ease;
+}
+
+/* Icon bounce effect on hover */
+.portfolio-hover-content i:hover {
+    transform: scale(1.2);
+}
+
+/* Image styling */
+.portfolio-item img.img-responsive {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Slight zoom effect on hover */
+.portfolio-item:hover img.img-responsive {
+    transform: scale(1.1);
+    filter: brightness(0.9);
+}
+
+/* Caption container styling */
+.portfolio-caption {
+    text-align: center;
+    padding: 15px 10px;
+    background-color: #fff;
+    border-top: 2px solid #669264; /* Green accent border */
+    border-radius: 0 0 12px 12px;
+}
+
+/* Caption heading */
+.portfolio-caption h4 {
+    color: #333;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    animation: fadeIn 0.6s ease;
+}
+
+/* Caption text */
+.portfolio-caption p {
+    color: #888;
+    font-style: italic;
+    font-size: 0.9rem;
+    margin: 0;
+    animation: fadeIn 0.8s ease;
+}
+
+/* Fade-in animation for captions */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
