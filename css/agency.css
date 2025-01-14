@@ -413,3 +413,18 @@
 
 
 
+/* Style for WhatsApp and Call Links */
+a[href*="whatsapp"], a[href*="tel"] {
+    color: #669264;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+a[href*="whatsapp"]:hover, a[href*="tel"]:hover {
+    color: #4b724e;
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+
+
