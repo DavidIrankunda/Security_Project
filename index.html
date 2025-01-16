@@ -362,15 +362,15 @@ and Social Media services in Kigali, Rwanda. ">
                 <table class="table-layout">
                     <tr>
                         <!-- About Us Section -->
-                        <td class="table-column" data-sal="slide-up" data-sal-duration="800">
+                        <td class="table-column about-column" data-sal="slide-right" data-sal-duration="800">
                             <div class="about-us">
-                                <div class="section-heading heading-left mb-0">
+                                <div class="section-heading heading-left">
                                     <span class="subtitle">About Us</span>
                                     <p>
-                                        Crowd Minders is Rwanda’s leading security company, trusted by businesses, organizations, and event organizers since 2015. Founded on the principles of discipline, professionalism, and innovation, we specialize in providing reliable security solutions for events, venues, and private gatherings. From managing massive crowds at Kigali Arena to protecting intimate corporate events, our expertise has made us a cornerstone of safety in Rwanda.
+                                        Crowd Minders is Rwanda’s leading security company, trusted by businesses, organizations, and event organizers since 2015. Founded on the principles of discipline, professionalism, and innovation, we specialize in providing reliable security solutions for events, venues, and private gatherings.
                                     </p>
                                     <p>
-                                        Our team is composed of highly trained professionals with backgrounds in law enforcement, military, and advanced security practices. With over 8 years of experience, we’ve built a reputation for excellence, earning the trust of high-profile clients and organizations across the country.
+                                        From managing massive crowds at Kigali Arena to protecting intimate corporate events, our expertise has made us a cornerstone of safety in Rwanda. Our team is composed of highly trained professionals with backgrounds in law enforcement, military, and advanced security practices.
                                     </p>
                                     <span class="subtitle">Mission</span>
                                     <p>
@@ -380,26 +380,25 @@ and Social Media services in Kigali, Rwanda. ">
                             </div>
                         </td>
                         <!-- Contact Form Section -->
-                        <td class="table-column" data-sal="slide-up" data-sal-duration="800" data-sal-delay="100">
+                        <td class="table-column form-column" data-sal="slide-left" data-sal-duration="800" data-sal-delay="100">
                             <div class="contact-form-box">
-                                <h3 class="title">Get a free Crowd Minders's Quote Now</h3>
+                                <h3 class="title">Get a Free Crowd Minders Quote Now</h3>
                                 <form method="POST" action="https://formbold.com/s/3jvPV" class="axil-contact-form" id="my-form">
                                     <div class="form-group">
-                                        <label>Name</label>
-                                        <input type="text" class="form-control" name="contact-name" placeholder="David Adam" required="">
+                                        <label for="name">Name</label>
+                                        <input type="text" id="name" class="form-control" name="contact-name" placeholder="David Adam" required="">
                                     </div>
                                     <div class="form-group">
-                                        <label>Email</label>
-                                        <input type="email" class="form-control" name="contact-email" placeholder="example@gmail.com" required="">
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" class="form-control" name="contact-email" placeholder="example@gmail.com" required="">
                                     </div>
                                     <div class="form-group mb--40">
-                                        <label>Phone</label>
-                                        <input type="tel" class="form-control" name="contact-company" placeholder="+123456789" required="">
+                                        <label for="phone">Phone</label>
+                                        <input type="tel" id="phone" class="form-control" name="contact-phone" placeholder="+123456789" required="">
                                     </div>
                                     <div class="form-group">
                                         <input type="submit" value="Get Free Quote" class="axil-btn btn-fill-primary btn-fluid btn-primary" name="submit-btn">
                                     </div>
-                                    <div id="status"></div>
                                 </form>
                             </div>
                         </td>
@@ -409,30 +408,79 @@ and Social Media services in Kigali, Rwanda. ">
         </section>
         
         <style>
-        /* General Styling */
+        /* General Table Layout */
         .table-layout {
             width: 100%;
-            border-spacing: 20px;
+            border-spacing: 30px;
         }
         .table-column {
             vertical-align: top;
             padding: 20px;
+            animation: fadeInUp 1s ease-in-out;
         }
         
         /* About Us Section */
-        .about-us {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        .about-column .about-us {
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .about-column .about-us:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
         
         /* Form Section */
-        .contact-form-box {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        .form-column .contact-form-box {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .form-column .contact-form-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        .contact-form-box .form-group {
+            margin-bottom: 20px;
+        }
+        .contact-form-box .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .contact-form-box .form-control:focus {
+            border-color: #669264;
+            outline: none;
+        }
+        .contact-form-box .axil-btn {
+            background-color: #669264;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .contact-form-box .axil-btn:hover {
+            background-color: #669264;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         /* Responsive Design */
@@ -443,7 +491,7 @@ and Social Media services in Kigali, Rwanda. ">
             .table-column {
                 display: block;
                 width: 100%;
-                margin-bottom: 20px;
+                margin-bottom: 30px;
             }
         }
         </style>
