@@ -10753,3 +10753,200 @@ body.op-modal-open {
     font-size: 1.5rem;
     text-transform: uppercase;
 }
+
+/* Logo Styling */
+.brand-grid {
+    width: 100px; /* Set small width for logos */
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-grid img {
+    max-width: 100%;
+    max-height: 100px; /* Small height for logos */
+    object-fit: contain; /* Ensure logos fit within the given dimensions */
+}
+
+
+
+/* General Styles */
+.footer-widget {
+    margin-bottom: 20px;
+}
+
+.footer-widget .widget-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #669264;
+    text-transform: uppercase;
+}
+
+.footer-menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.footer-menu li {
+    margin-bottom: 5px;
+}
+
+.footer-menu a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-menu a:hover {
+    color: #669264;
+}
+
+/* Newsletter Styles */
+.footer-newsletter .title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #669264;
+}
+
+.footer-newsletter p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.subscribe-btn {
+    background-color: #669264;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe-btn:hover {
+    background-color: #557b4d;
+}
+
+/* Partners Section */
+.partners-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.partner-logos {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.partner-logo {
+    width: 100px; /* Smaller logos */
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+.partner-logo:hover {
+    transform: scale(1.1);
+}
+
+
+
+/* General Footer Styles */
+.footer-main {
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+}
+
+.footer-widget {
+    margin-bottom: 20px;
+}
+
+.footer-widget .widget-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #669264;
+    margin-bottom: 15px;
+}
+
+.footer-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-menu li {
+    margin-bottom: 10px;
+}
+
+.footer-menu a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.footer-menu a:hover {
+    color: #669264;
+}
+
+/* Partners Section */
+.partner-logos {
+    gap: 20px;
+}
+
+.partner-logo {
+    width: 60px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.partner-logo:hover {
+    transform: scale(1.1);
+}
+
+/* Newsletter Section */
+.footer-newsletter .title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #669264;
+    margin-bottom: 10px;
+}
+
+.footer-newsletter p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.input-group {
+    display: flex;
+    gap: 5px;
+}
+
+.subscribe-btn {
+    background-color: #669264;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe-btn:hover {
+    background-color: #557b4d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .partner-logo {
+        width: 50px;
+    }
+
+    .footer-newsletter .title {
+        font-size: 18px;
+    }
+
+    .input-group input {
+        width: 70%;
+    }
+}
