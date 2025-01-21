@@ -10366,12 +10366,12 @@ body.op-modal-open {
     Section Space
 -------------------------*/
 .section-padding {
-    padding: 140px 0 110px;
+    padding: 10px 0 1px;
 }
 
 @media only screen and (max-width: 1199px) {
     .section-padding {
-        padding: 100px 0 70px;
+        padding: 10px 0 10px;
     }
 }
 
@@ -10383,7 +10383,7 @@ body.op-modal-open {
 
 @media only screen and (max-width: 767px) {
     .section-padding {
-        padding: 60px 0 30px;
+        padding: 1px 0 30px;
     }
 }
 
