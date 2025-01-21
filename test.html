@@ -1,235 +1,73 @@
-<style>
-    /* Section Styling */
-    .modern-contact-section {
-      padding: 60px 20px;
-      background: linear-gradient(135deg, #007bff, #5ac8fa);
-      color: #fff;
-      border-radius: 15px;
-      overflow: hidden;
-      animation: sectionFadeIn 1.2s ease-in-out;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tab Navigation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-  
-    /* Title Styling */
-    .modern-contact-section .section-title {
-      font-size: 28px;
-      font-weight: 700;
-      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-      margin-bottom: 20px;
-      text-align: center;
-      animation: fadeInUp 1s ease-out;
-    }
-  
-    /* Contact Form Box */
-    .contact-form-box {
-      background: #fff;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      animation: slideIn 1.2s ease-out;
-    }
-  
-    .contact-form-box b.title {
-      display: block;
-      font-size: 22px;
-      color: #333;
-      margin-bottom: 20px;
-    }
-  
-    /* Form Elements */
-    .custom-form-group {
-      margin-bottom: 15px;
-    }
-  
-    .custom-form-control {
-      width: 100%;
-      padding: 10px 14px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
-      transition: all 0.3s ease;
-    }
-  
-    .custom-form-control:focus {
-      border-color: #007bff;
-      box-shadow: 0 4px 10px rgba(0, 123, 255, 0.5);
-      outline: none;
-    }
-  
-    /* Button Styling */
-    .custom-submit-btn {
-      width: 100%;
-      padding: 12px;
-      background: linear-gradient(135deg, #007bff, #5ac8fa);
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-size: 18px;
-      font-weight: bold;
+    .tabs {
+      display: flex;
       cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: #f4f4f4;
+      justify-content: center;
     }
-  
-    .custom-submit-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 15px rgba(0, 123, 255, 0.4);
+    .tab {
+      padding: 15px 30px;
+      margin: 0;
+      border: 1px solid #ddd;
+      border-bottom: none;
+      background: #e9e9e9;
+      text-align: center;
     }
-  
-    /* Contact Info Section */
-    .contact-info {
-      animation: fadeInUp 1.5s ease;
-    }
-  
-    .contact-info h4 {
-      font-size: 22px;
+    .tab.active {
+      background: #fff;
       font-weight: bold;
     }
-  
-    .contact-info p {
-      margin: 10px 0 20px;
-      line-height: 1.5;
+    .tab-content {
+      display: none;
+      border: 1px solid #ddd;
+      padding: 20px;
+      background: #fff;
     }
-  
-    .contact-info .phone-number a,
-    .contact-info a {
-      font-size: 18px;
-      color: #fff;
-      text-decoration: none;
-    }
-  
-    .contact-info .phone-number a:hover {
-      color: #ffeb3b;
-    }
-  
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateX(-50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-  
-    @keyframes sectionFadeIn {
-      from {
-        opacity: 0;
-        transform: scale(0.95);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+    .tab-content.active {
+      display: block;
     }
   </style>
-  
-  <section class="modern-contact-section">
-    <div class="container">
-      <h2 class="section-title">Stay Safe with Crowd-Minders</h2>
-      <div class="row">
-        <!-- Form Section -->
-        <div class="col-xl-5 col-lg-6">
-          <div class="contact-form-box shadow-box mb--30">
-            <b class="title">Ready to Stay Safe?—Request a Free Crowd-Minders Consultation!</b>
-            <form
-              action="https://formbold.com/s/ozZmp"
-              method="POST"
-              class="custom-contact-form-wrapper"
-              id="my-unique-form"
-            >
-              <div class="custom-form-group">
-                <input
-                  type="text"
-                  class="custom-form-control"
-                  name="contact-name"
-                  placeholder="Your Name"
-                  required
-                />
-              </div>
-              <div class="custom-form-group">
-                <input
-                  type="email"
-                  class="custom-form-control"
-                  name="contact-email"
-                  placeholder="Your Email"
-                  required
-                />
-              </div>
-              <div class="custom-form-group">
-                <input
-                  type="tel"
-                  class="custom-form-control"
-                  name="contact-phone"
-                  placeholder="Your Phone"
-                  required
-                />
-              </div>
-              <div class="custom-form-group">
-                <input
-                  type="text"
-                  class="custom-form-control"
-                  name="contact-company"
-                  placeholder="Your Company"
-                  required
-                />
-              </div>
-              <div class="custom-form-group">
-                <textarea
-                  name="contact-message"
-                  class="custom-form-control"
-                  placeholder="How can we help you? (e.g., event details: date, location, guests)"
-                  rows="4"
-                  required
-                ></textarea>
-              </div>
-              <div class="custom-form-group">
-                <input
-                  type="submit"
-                  value="Get Pricing Now"
-                  class="custom-submit-btn"
-                  name="submit-btn"
-                />
-              </div>
-            </form>
-          </div>
-        </div>
-  
-        <!-- Contact Info Section -->
-        <div class="col-xl-5 col-lg-6 offset-xl-1">
-          <div class="contact-info mb--100 mb_md--30 mt_md--0 mt--150">
-            <h4 class="title">Phone</h4>
-            <p>We’re here for you! Call us Monday - Friday,<br /> 9:00 AM to 10:00 PM</p>
-            <h4 class="phone-number">
-              <a href="tel:+250788520272">(+250) 788 520 272</a>
-            </h4>
-            <h4 class="phone-number">
-              <a href="tel:+250790912194">(+250) 790 912 194</a>
-            </h4>
-          </div>
-          <div class="contact-info mb--30">
-            <h4 class="title">Email</h4>
-            <p>
-              Reach out to us anytime! Our support team responds within 24 hours
-              during business hours:
-            </p>
-            <h4 class="phone-number">
-              <a href="mailto:info@CrowdMinders.rw">info@CrowdMinders.rw</a>
-            </h4>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
+</head>
+<body>
+  <div class="tabs">
+    <div class="tab active" onclick="showTab(0)">Tab 1</div>
+    <div class="tab" onclick="showTab(1)">Tab 2</div>
+    <div class="tab" onclick="showTab(2)">Tab 3</div>
+  </div>
+  <div class="tab-content active">
+    <p>This is the content for Tab 1.</p>
+  </div>
+  <div class="tab-content">
+    <p>This is the content for Tab 2.</p>
+  </div>
+  <div class="tab-content">
+    <p>This is the content for Tab 3.</p>
+  </div>
+
+  <script>
+    function showTab(index) {
+      const tabs = document.querySelectorAll('.tab');
+      const contents = document.querySelectorAll('.tab-content');
+
+      tabs.forEach((tab, i) => {
+        tab.classList.toggle('active', i === index);
+      });
+      contents.forEach((content, i) => {
+        content.classList.toggle('active', i === index);
+      });
+    }
+  </script>
+</body>
+</html>
