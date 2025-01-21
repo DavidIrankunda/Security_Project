@@ -712,7 +712,7 @@ input {
 -------------------------*/
 .breadcrum-area {
     background: var(--gradient-primary);
-    padding: 200px 0 100px;
+    padding: 200px 0 1px;
     margin-top: -160px;
     position: relative;
     z-index: 1;
@@ -10492,7 +10492,7 @@ body.op-modal-open {
 }
 
 .pt--200 {
-    padding-top: 200px;
+    padding-top: 20px;
 }
 
 .pt--150 {
