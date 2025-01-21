@@ -1,166 +1,235 @@
-<!DOCTYPE html>
-<!-- Coding By CodingNepal - www.codingnepalweb.com -->
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Card Design HTML and CSS | CodingNepal</title>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- Custom CSS -->
-    <!-- <link rel="stylesheet" href="style.css"> -->
-
-    <style>/* Importing Google font - Open Sans */
-
-    /* Importing Google font - Open Sans */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
-}
-
-body {
-    background: #f4f9f4;
-}
-
-.card-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    max-width: 1250px;
-    margin: 100px auto;
-    padding: 20px;
-    gap: 30px;
-}
-
-.card-item {
-    position: relative;
-    overflow: hidden;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-decoration: none;
-    color: #333;
-}
-
-.card-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
-}
-
-.card-item img {
-    width: 100%;
-    border-radius: 8px;
-    object-fit: cover;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-.card-item:hover img {
-    filter: grayscale(0);
-    transform: scale(1.05);
-}
-
-.card-item span {
-    display: inline-block;
-    background: #f4f9f4;
-    color: #669264;
-    margin-top: 20px;
-    padding: 8px 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    border-radius: 50px;
-    border: 2px solid #669264;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.card-item:hover span {
-    background: #669264;
-    color: #fff;
-}
-
-.card-item h3 {
-    font-size: 1.5rem;
-    color: #333;
-    margin: 15px 0;
-    line-height: 1.4;
-    transition: color 0.3s ease;
-}
-
-.card-item:hover h3 {
-    color: #669264;
-}
-
-.card-item .arrow {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    height: 50px;
-    width: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #669264;
-    color: #fff;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-    transform: scale(0.8);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-item:hover .arrow {
-    transform: scale(1);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-@keyframes fadeInUp {
-    0% {
+<style>
+    /* Section Styling */
+    .modern-contact-section {
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #007bff, #5ac8fa);
+      color: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      animation: sectionFadeIn 1.2s ease-in-out;
+    }
+  
+    /* Title Styling */
+    .modern-contact-section .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+      margin-bottom: 20px;
+      text-align: center;
+      animation: fadeInUp 1s ease-out;
+    }
+  
+    /* Contact Form Box */
+    .contact-form-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      animation: slideIn 1.2s ease-out;
+    }
+  
+    .contact-form-box b.title {
+      display: block;
+      font-size: 22px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+  
+    /* Form Elements */
+    .custom-form-group {
+      margin-bottom: 15px;
+    }
+  
+    .custom-form-control {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+  
+    .custom-form-control:focus {
+      border-color: #007bff;
+      box-shadow: 0 4px 10px rgba(0, 123, 255, 0.5);
+      outline: none;
+    }
+  
+    /* Button Styling */
+    .custom-submit-btn {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #007bff, #5ac8fa);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .custom-submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 15px rgba(0, 123, 255, 0.4);
+    }
+  
+    /* Contact Info Section */
+    .contact-info {
+      animation: fadeInUp 1.5s ease;
+    }
+  
+    .contact-info h4 {
+      font-size: 22px;
+      font-weight: bold;
+    }
+  
+    .contact-info p {
+      margin: 10px 0 20px;
+      line-height: 1.5;
+    }
+  
+    .contact-info .phone-number a,
+    .contact-info a {
+      font-size: 18px;
+      color: #fff;
+      text-decoration: none;
+    }
+  
+    .contact-info .phone-number a:hover {
+      color: #ffeb3b;
+    }
+  
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
         opacity: 0;
         transform: translateY(20px);
-    }
-    100% {
+      }
+      to {
         opacity: 1;
         transform: translateY(0);
+      }
     }
-}
-
-.card-item {
-    animation: fadeInUp 0.6s ease forwards;
-}
-        
-        </style>
-</head>
-<body>
-    <div class="card-list">
-        <a href="#" class="card-item">
-            <img src="images/developer.jpg" alt="Card Image">
-            <span class="developer">Developer</span>
-            <h3>A "developer" codes software and websites.</h3>
-            <div class="arrow">
-                <i class="fas fa-arrow-right card-icon"></i>
-            </div>
-        </a>
-        <a href="#" class="card-item">
-            <img src="images/designer.jpg" alt="Card Image">
-            <span class="designer">Designer</span>
-            <h3>A "designer" is a design expert.</h3>
-            <div class="arrow">
-                <i class="fas fa-arrow-right card-icon"></i>
-            </div>
-        </a>
-        <a href="#" class="card-item">
-            <img src="images/editor.jpg" alt="Card Image">
-            <span class="editor">Editor</span>
-            <h3>An "editor" ensures content quality and accuracy.</h3>
-            <div class="arrow">
-                <i class="fas fa-arrow-right card-icon"></i>
-            </div>
-        </a>
+  
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  
+    @keyframes sectionFadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+  
+  <section class="modern-contact-section">
+    <div class="container">
+      <h2 class="section-title">Stay Safe with Crowd-Minders</h2>
+      <div class="row">
+        <!-- Form Section -->
+        <div class="col-xl-5 col-lg-6">
+          <div class="contact-form-box shadow-box mb--30">
+            <b class="title">Ready to Stay Safe?—Request a Free Crowd-Minders Consultation!</b>
+            <form
+              action="https://formbold.com/s/ozZmp"
+              method="POST"
+              class="custom-contact-form-wrapper"
+              id="my-unique-form"
+            >
+              <div class="custom-form-group">
+                <input
+                  type="text"
+                  class="custom-form-control"
+                  name="contact-name"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="custom-form-group">
+                <input
+                  type="email"
+                  class="custom-form-control"
+                  name="contact-email"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="custom-form-group">
+                <input
+                  type="tel"
+                  class="custom-form-control"
+                  name="contact-phone"
+                  placeholder="Your Phone"
+                  required
+                />
+              </div>
+              <div class="custom-form-group">
+                <input
+                  type="text"
+                  class="custom-form-control"
+                  name="contact-company"
+                  placeholder="Your Company"
+                  required
+                />
+              </div>
+              <div class="custom-form-group">
+                <textarea
+                  name="contact-message"
+                  class="custom-form-control"
+                  placeholder="How can we help you? (e.g., event details: date, location, guests)"
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
+              <div class="custom-form-group">
+                <input
+                  type="submit"
+                  value="Get Pricing Now"
+                  class="custom-submit-btn"
+                  name="submit-btn"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+  
+        <!-- Contact Info Section -->
+        <div class="col-xl-5 col-lg-6 offset-xl-1">
+          <div class="contact-info mb--100 mb_md--30 mt_md--0 mt--150">
+            <h4 class="title">Phone</h4>
+            <p>We’re here for you! Call us Monday - Friday,<br /> 9:00 AM to 10:00 PM</p>
+            <h4 class="phone-number">
+              <a href="tel:+250788520272">(+250) 788 520 272</a>
+            </h4>
+            <h4 class="phone-number">
+              <a href="tel:+250790912194">(+250) 790 912 194</a>
+            </h4>
+          </div>
+          <div class="contact-info mb--30">
+            <h4 class="title">Email</h4>
+            <p>
+              Reach out to us anytime! Our support team responds within 24 hours
+              during business hours:
+            </p>
+            <h4 class="phone-number">
+              <a href="mailto:info@CrowdMinders.rw">info@CrowdMinders.rw</a>
+            </h4>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
-</html>
+  </section>
+  

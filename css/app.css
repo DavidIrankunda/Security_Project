@@ -2599,6 +2599,7 @@ Pagination
 
 .contact-form-box.shadow-box {
     box-shadow: 0 20px 48px 0 rgba(153, 161, 170, 0.25);
+    padding: 15px 20px 30px 30px;
 }
 
 .about-expert {
@@ -3910,9 +3911,9 @@ Pagination
 }
 
 .contact-info {
-    background-color: var(--color-dark);
+    background-color:#29362c;
     border-radius: 14px;
-    padding: 60px 50px;
+    padding: 20px 2px 38px 85px;
     box-shadow: 0 9px 18px 0 rgba(0, 0, 0, 0.25);
 }
 
@@ -10950,5 +10951,4 @@ body.op-modal-open {
         width: 70%;
     }
 }   
-
 
