@@ -1,73 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tab Navigation</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    .tabs {
-      display: flex;
-      cursor: pointer;
-      background: #f4f4f4;
-      justify-content: center;
-    }
-    .tab {
-      padding: 15px 30px;
-      margin: 0;
-      border: 1px solid #ddd;
-      border-bottom: none;
-      background: #e9e9e9;
-      text-align: center;
-    }
-    .tab.active {
-      background: #fff;
-      font-weight: bold;
-    }
-    .tab-content {
-      display: none;
-      border: 1px solid #ddd;
-      padding: 20px;
-      background: #fff;
-    }
-    .tab-content.active {
-      display: block;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Slider</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    <style>
+        /* Logo Slider Specific Styles */
+        .logo-slider-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .logo-slider .slick-slide {
+            margin: 0 10px;
+        }
+
+        .logo-slider .slick-slide img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-slider .slick-slide:hover img {
+            transform: scale(1.1);
+        }
+
+        .logo-slider .slick-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            border-radius: 50%;
+        }
+
+        .logo-slider .slick-arrow.left-arrow {
+            left: 10px;
+        }
+
+        .logo-slider .slick-arrow.right-arrow {
+            right: 10px;
+        }
+
+        .logo-slider .slick-arrow:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .logo-slider .slick-dots li button:before {
+            color: #fff;
+        }
+
+        .logo-slider .slick-dots {
+            bottom: -20px;
+        }
+
+        .logo-slider .slick-dots li button:hover:before {
+            opacity: 0.8;
+        }
+    </style>
 </head>
 <body>
-  <div class="tabs">
-    <div class="tab active" onclick="showTab(0)">Tab 1</div>
-    <div class="tab" onclick="showTab(1)">Tab 2</div>
-    <div class="tab" onclick="showTab(2)">Tab 3</div>
-  </div>
-  <div class="tab-content active">
-    <p>This is the content for Tab 1.</p>
-  </div>
-  <div class="tab-content">
-    <p>This is the content for Tab 2.</p>
-  </div>
-  <div class="tab-content">
-    <p>This is the content for Tab 3.</p>
-  </div>
+    <div class="logo-slider-container">
+        <section class="logo-slider customer-logos">
+            <div class="slide"><img src="brand/bk.png" alt="BK"></div>
+            <div class="slide"><img src="brand/BAL_Logo.png" alt="BAL Logo"></div>
+            <div class="slide"><img src="brand/fia.png" alt="FIA"></div>
+            <div class="slide"><img src="brand/GraceRoom-logo.png" alt="GraceRoom"></div>
+            <div class="slide"><img src="brand/Woman_D.png" alt="Woman D"></div>
+            <div class="slide"><img src="brand/1.png" alt="Brand 1"></div>
+            <div class="slide"><img src="brand/move_africa.png" alt="Move Africa"></div>
+            <div class="slide"><img src="brand/fiba-logo.png" alt="FIBA"></div>
+            <div class="slide"><img src="brand/intare.png" alt="Intare"></div>
+            <div class="slide"><img src="brand/trace-aword.png" alt="Trace Award"></div>
+            <div class="slide"><img src="brand/stade.png" alt="Stade"></div>
+            <div class="slide"><img src="brand/canalolympia.png" alt="Canal Olympia"></div>
+        </section>
+        <button class="logo-slider-arrow left-arrow">&#10094;</button>
+        <button class="logo-slider-arrow right-arrow">&#10095;</button>
+    </div>
 
-  <script>
-    function showTab(index) {
-      const tabs = document.querySelectorAll('.tab');
-      const contents = document.querySelectorAll('.tab-content');
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.logo-slider').slick({
+                slidesToShow: 6,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1000,
+                arrows: true,
+                dots: false,
+                pauseOnHover: true,
+                infinite: true,
+                prevArrow: $('.logo-slider-container .left-arrow'),
+                nextArrow: $('.logo-slider-container .right-arrow'),
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 5,
+                        },
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 4,
+                        },
+                    },
+                    {
+                        breakpoint: 520,
+                        settings: {
+                            slidesToShow: 3,
+                        },
+                    },
+                ],
+            });
 
-      tabs.forEach((tab, i) => {
-        tab.classList.toggle('active', i === index);
-      });
-      contents.forEach((content, i) => {
-        content.classList.toggle('active', i === index);
-      });
-    }
-  </script>
+            // Pause slider on click
+            $('.logo-slider .slide').on('click', function () {
+                $('.logo-slider').slick('slickPause');
+            });
+        });
+    </script>
 </body>
 </html>
